@@ -9,13 +9,18 @@ class Product:
     def __init__(self, name: str, description: str, price: float, quantity: int) -> None:
         self.name = name  # Название товара
         self.description = description  # Описание товара
-        self.__price = price  # Цена товара
+        self.__price = price  # Цена товара (приватная)
         self.quantity = quantity  # Количество в наличии
 
     @classmethod
-    def new_product(cls, name: str, description: str, price: float, quantity: int) -> "Product":
-        """Метод для создания нового продукта."""
-        return cls(name, description, price, quantity)
+    def new_product(cls, product_data: dict) -> "Product":
+        """Метод для создания нового продукта из словаря."""
+        return cls(
+            name=product_data["name"],
+            description=product_data["description"],
+            price=product_data["price"],
+            quantity=product_data["quantity"],
+        )
 
     @property
     def price(self) -> float:
@@ -23,16 +28,12 @@ class Product:
         return self.__price
 
     @price.setter
-    def price(self, new_price: str) -> None:
+    def price(self, new_price: float) -> None:
         """Сеттер для цены товара."""
-        try:
-            new_price_float = float(new_price)
-            if new_price_float <= 0:
-                print("Цена не должна быть нулевая или отрицательная")
-                return
-            self.__price = new_price_float
-        except ValueError:
-            print("Ошибка: Некорректное значение цены.")
+        if new_price <= 0:
+            print("Цена не должна быть нулевая или отрицательная")
+            return
+        self.__price = new_price
 
     def __str__(self) -> str:
         """Метод для строкового представления продукта."""

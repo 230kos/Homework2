@@ -1,7 +1,7 @@
 from typing import Any
 
 from src.category import Category
-from src.products import Product
+from src.product import Product
 
 
 def test_category_init(category: Category) -> None:

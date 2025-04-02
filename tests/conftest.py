@@ -3,7 +3,7 @@ from typing import Any
 import pytest
 
 from src.category import Category
-from src.products import Product
+from src.product import Product
 
 
 @pytest.fixture
