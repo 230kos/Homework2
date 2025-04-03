@@ -21,6 +21,9 @@ class Category:
         Category.category_count += 1  # Увеличиваем количество категорий
         Category.product_count += len(products) if products else 0  # Увеличиваем количество товаров
 
+    def __str__(self) -> str:
+        return f"{self.name}, количество продуктов: {len(self.__products)} шт."
+
     def add_product(self, product: Product) -> None:
         """Метод для добавления товара в категорию."""
         if isinstance(product, Product):
@@ -56,9 +59,3 @@ class Category:
     def get_product_count(self) -> int:
         """Метод для получения общего количества продуктов в категории."""
         return len(self)
-
-    def __str__(self) -> str:
-        return (
-            f"Category(name={self.name}, description={self.description},"
-            f" number of products={self.get_product_count()})"
-        )
