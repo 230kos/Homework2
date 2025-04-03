@@ -32,7 +32,7 @@ def test_category_setter(category, product):
 
 
 def test_category_str(category):
-    assert str(category) == "Смартфоны, количество продуктов: 1 шт."
+    assert str(category) == "Смартфоны, количество продуктов: 5 шт."
 
 
 def test_product_iterator(product_iterator):
