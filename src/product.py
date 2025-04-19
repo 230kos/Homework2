@@ -12,15 +12,17 @@ class Product:
         self.__price = price  # Цена товара (приватная)
         self.quantity = quantity  # Количество в наличии
 
+    def __str__(self) -> str:
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other: "Product") -> float:
+        if not isinstance(other, Product):
+            raise TypeError("Можно складывать только объекты класса Product")
+        return (self.price * self.quantity) + (other.price * other.quantity)
+
     @classmethod
-    def new_product(cls, product_data: dict) -> "Product":
-        """Метод для создания нового продукта из словаря."""
-        return cls(
-            name=product_data["name"],
-            description=product_data["description"],
-            price=product_data["price"],
-            quantity=product_data["quantity"],
-        )
+    def new_product(cls, name: str, description: str, price: float, quantity: int) -> "Product":
+        return cls(name, description, price, quantity)
 
     @property
     def price(self) -> float:
@@ -34,10 +36,3 @@ class Product:
             print("Цена не должна быть нулевая или отрицательная")
             return
         self.__price = new_price
-
-    def __str__(self) -> str:
-        """Метод для строкового представления продукта."""
-        return (
-            f"Product(name={self.name}, description={self.description}, "
-            f"price={self.price}, quantity={self.quantity})"
-        )

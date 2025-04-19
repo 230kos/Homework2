@@ -1,5 +1,4 @@
 from typing import List
-
 from src.product import Product
 
 
@@ -20,6 +19,10 @@ class Category:
         self.__products = products if products else []  # Список товаров категории
         Category.category_count += 1  # Увеличиваем количество категорий
         Category.product_count += len(products) if products else 0  # Увеличиваем количество товаров
+
+    def __str__(self) -> str:
+        total_quantity = sum(product.quantity for product in self.__products)
+        return f"{self.name}, количество продуктов: {total_quantity} шт."
 
     def add_product(self, product: Product) -> None:
         """Метод для добавления товара в категорию."""
@@ -56,9 +59,3 @@ class Category:
     def get_product_count(self) -> int:
         """Метод для получения общего количества продуктов в категории."""
         return len(self)
-
-    def __str__(self) -> str:
-        return (
-            f"Category(name={self.name}, description={self.description},"
-            f" number of products={self.get_product_count()})"
-        )
