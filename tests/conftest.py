@@ -28,3 +28,15 @@ def product_full_price2():
 @pytest.fixture
 def product_iterator(category):
     return ProductIterator(category)
+
+
+@pytest.fixture
+def empty_category():
+    return Category("Пустая", "Пустая категория", [])
+
+
+@pytest.fixture
+def sample_category():
+    p1 = Product("Product1", "Desc1", 100, 5)
+    p2 = Product("Product2", "Desc2", 200, 3)
+    return Category("Test", "Test Category", [p1, p2])
