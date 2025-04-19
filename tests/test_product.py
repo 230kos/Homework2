@@ -1,3 +1,6 @@
+import pytest
+
+from src.exceptions import ZeroQuantityError
 from src.product import Product
 
 
@@ -30,5 +33,12 @@ def test_product_str(product):
 
 
 def test_product_add(product_full_price1, product_full_price2):
-    expected_sum = (product_full_price1.price * product_full_price1.quantity) + (product_full_price2.price * product_full_price2.quantity)
+    expected_sum = (product_full_price1.price * product_full_price1.quantity) + (
+        product_full_price2.price * product_full_price2.quantity
+    )
     assert product_full_price1 + product_full_price2 == expected_sum
+
+
+def test_zero_quantity_product():
+    with pytest.raises(ZeroQuantityError):
+        Product("Zero", "Test", 100.0, 0)
