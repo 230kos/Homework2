@@ -40,8 +40,8 @@ class Product(BaseProduct, PrintMixin):
         return (self.price * self.quantity) + (other.price * other.quantity)
 
     @classmethod
-    def new_product(cls: Type[T], name: str, description: str, price: float, quantity: int) -> T:
-        return cls(name, description, price, quantity)
+    def new_product(cls, instance_data):
+        return cls(**instance_data)
 
     @property
     def price(self) -> float:
