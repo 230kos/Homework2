@@ -5,6 +5,8 @@ from src.product import Product
 
 
 class ProductIterator:
+    """Итератор для последовательного доступа к товарам категории."""
+
     def __init__(self, category_obj: Category) -> None:
         self.category1: Category = category_obj
         self.index: int = 0

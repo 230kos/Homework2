@@ -26,3 +26,4 @@ def test_concrete_entity_implementation():
     assert entity.name == "Test"
     assert entity.description == "Description"
     assert str(entity) == "Test: Description"
+

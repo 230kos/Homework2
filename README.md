@@ -84,3 +84,4 @@ python <_path_>name.py - из другой папки
 ## Тестирование
 pytest tests/ - все тесты из папки tests
 pytest tests/<test_name>.py - запуск конкретного теста 
+

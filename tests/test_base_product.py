@@ -1,34 +1,23 @@
+from abc import ABC
+
 import pytest
+
 from src.base_product import BaseProduct
 
 
 def test_base_product_is_abstract():
+    """Проверяем, что класс действительно абстрактный"""
     with pytest.raises(TypeError):
-        BaseProduct("Test", "Description", 100, 5)
+        # Попытка создать экземпляр абстрактного класса
+        BaseProduct()
 
 
-def test_base_product_methods():
-    assert "__init__" in BaseProduct.__abstractmethods__
-    assert "__str__" in BaseProduct.__abstractmethods__
-    assert "__add__" in BaseProduct.__abstractmethods__
+def test_base_product_has_required_abstract_methods():
+    """Проверяем наличие обязательных абстрактных методов"""
+    assert "new_product" in BaseProduct.__abstractmethods__
+    assert len(BaseProduct.__abstractmethods__) == 1  # Только new_product должен быть абстрактным
 
 
-class TestConcreteProduct(BaseProduct):
-    def __init__(self, name, description, price, quantity):
-        super().__init__(name, description, price, quantity)
-
-    def __str__(self):
-        return f"{self.name} - {self.price}"
-
-    def __add__(self, other):
-        return self.price + other.price
-
-
-def test_concrete_product_implementation():
-    product1 = TestConcreteProduct("Test1", "Desc1", 100, 5)
-    product2 = TestConcreteProduct("Test2", "Desc2", 200, 3)
-
-    assert product1.name == "Test1"
-    assert product1.price == 100
-    assert str(product1) == "Test1 - 100"
-    assert product1 + product2 == 300
+def test_base_product_is_abc():
+    """Проверяем, что класс является подклассом ABC"""
+    assert issubclass(BaseProduct, ABC)

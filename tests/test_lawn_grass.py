@@ -4,11 +4,6 @@ from src.lawn_grass import LawnGrass
 from src.product import Product
 
 
-@pytest.fixture
-def lawn_grass():
-    return LawnGrass("Premium Grass", "Soft", 500, 100, "USA", "2 weeks", "Green")
-
-
 def test_lawn_grass_init(lawn_grass):
     assert lawn_grass.name == "Premium Grass"
     assert lawn_grass.price == 500

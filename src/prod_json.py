@@ -52,7 +52,7 @@ if __name__ == "__main__":
         print(category)
 
 """
-второй вариант
+другой вариант
 if __name__ == "__main__":
     raw_data = read_json("../data/products.json")
     category_data = create_objects_from_json(raw_data)

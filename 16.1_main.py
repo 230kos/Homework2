@@ -83,3 +83,4 @@ if __name__ == '__main__':
         print("Возникла ошибка AddProductError при добавлении не продукта")
     else:
         print("Не возникла ошибка AddProductError при добавлении не продукта")
+

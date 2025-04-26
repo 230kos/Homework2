@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class AbstractEntity(ABC):
-    """Абстрактный класс для сущностей с общими свойствами"""
+    """Абстрактный класс для классов с общими свойствами"""
 
     @abstractmethod
     def __init__(self, name: str, description: str):
