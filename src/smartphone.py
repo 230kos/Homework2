@@ -1,5 +1,6 @@
-from src.product import Product
 from typing import Any, Union
+
+from src.product import Product
 
 
 class Smartphone(Product):
@@ -11,15 +12,15 @@ class Smartphone(Product):
     color: str
 
     def __init__(
-            self,
-            name: str,
-            description: str,
-            price: float,
-            quantity: int,
-            efficiency: str,
-            model: str,
-            memory: str,
-            color: str,
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        efficiency: str,
+        model: str,
+        memory: str,
+        color: str,
     ) -> None:
         """
         Инициализация смартфона
@@ -50,4 +51,3 @@ class Smartphone(Product):
         if type(other) is not type(self):
             raise TypeError("Можно складывать только объекты одного класса")
         return (self.price * self.quantity) + (other.price * other.quantity)
-

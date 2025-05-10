@@ -44,3 +44,4 @@ if __name__ == '__main__additional__':
     except Exception as e:
         print(f"Произошла ошибка: {e}")
 
+

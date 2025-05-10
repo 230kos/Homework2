@@ -10,7 +10,7 @@ class Category(AbstractEntity):
 
     category_count: int = 0
     product_count: int = 0
-    __products: List[Product]  # Явная аннотация для приватного атрибута
+    __products: List[Product]  # Явная аннотация для приватного атрибута.
 
     def __init__(self, name: str, description: str, products: Optional[List[Product]] = None) -> None:
         super().__init__(name, description)

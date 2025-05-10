@@ -1,5 +1,6 @@
-from src.product import Product
 from typing import Any, Union
+
+from src.product import Product
 
 
 class LawnGrass(Product):
@@ -10,14 +11,14 @@ class LawnGrass(Product):
     color: str
 
     def __init__(
-            self,
-            name: str,
-            description: str,
-            price: float,
-            quantity: int,
-            country: str,
-            germination_period: str,
-            color: str,
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        country: str,
+        germination_period: str,
+        color: str,
     ) -> None:
         """
         Инициализация газонной травы
@@ -44,7 +45,7 @@ class LawnGrass(Product):
             other: Другой продукт того же класса
 
         Returns:
-            Суммарная стоимость товаров
+            Общая стоимость товаров
 
         Raises:
             TypeError: Если объекты разных классов

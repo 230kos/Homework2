@@ -2,12 +2,6 @@ import pytest
 
 from src.exceptions import ZeroQuantityError
 from src.order import Order
-from src.product import Product
-
-
-@pytest.fixture
-def sample_product():
-    return Product("Test Product", "Description", 100.0, 10)
 
 
 def test_order_init(sample_product):

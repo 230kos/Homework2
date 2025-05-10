@@ -47,3 +47,4 @@ def test_add_zero_quantity_product(category):
 def test_add_invalid_product(category):
     with pytest.raises(AddProductError):
         category.add_product("not a product")
+

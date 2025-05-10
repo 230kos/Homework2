@@ -22,3 +22,4 @@ def test_iterator_stop(sample_category):
     list(iterator)  # Получаем все элементы
     with pytest.raises(StopIteration):
         next(iterator)  # Должно вызвать StopIteration
+

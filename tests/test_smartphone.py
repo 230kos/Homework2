@@ -4,11 +4,6 @@ from src.product import Product
 from src.smartphone import Smartphone
 
 
-@pytest.fixture
-def smartphone():
-    return Smartphone("iPhone 15", "512GB", 120000, 10, "A16", "15 Pro", "512GB", "Black")
-
-
 def test_smartphone_init(smartphone):
     assert smartphone.name == "iPhone 15"
     assert smartphone.price == 120000

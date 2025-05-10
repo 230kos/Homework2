@@ -13,3 +13,4 @@ def test_add_product_error():
     with pytest.raises(AddProductError) as excinfo:
         raise AddProductError("Test message")
     assert str(excinfo.value) == "Test message"
+

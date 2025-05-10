@@ -3,6 +3,8 @@ import pytest
 from src.category import Category
 from src.product import Product
 from src.product_iterator import ProductIterator
+from src.smartphone import Smartphone
+from src.lawn_grass import LawnGrass
 
 
 @pytest.fixture
@@ -40,3 +42,17 @@ def sample_category():
     p1 = Product("Product1", "Desc1", 100, 5)
     p2 = Product("Product2", "Desc2", 200, 3)
     return Category("Test", "Test Category", [p1, p2])
+
+
+@pytest.fixture
+def smartphone():
+    return Smartphone("iPhone 15", "512GB", 120000, 10, "A16", "15 Pro", "512GB", "Black")
+
+@pytest.fixture
+def sample_product():
+    return Product("Test Product", "Description", 100.0, 10)
+
+
+@pytest.fixture
+def lawn_grass():
+    return LawnGrass("Premium Grass", "Soft", 500, 100, "USA", "2 weeks", "Green")

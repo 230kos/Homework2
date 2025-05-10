@@ -5,6 +5,6 @@ class ZeroQuantityError(ValueError):
 
 
 class AddProductError(Exception):
-    """Базовое исключение для ошибок добавления товара"""
+    """Исключение для ошибок добавления товара"""
 
     pass
